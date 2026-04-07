@@ -13,6 +13,12 @@ h1{
     text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
 }
 
+img {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+}
+
 
 .resultsContainer {
     display: flex;
