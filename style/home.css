@@ -1,3 +1,5 @@
+@import "lib/fonts/impact.zip";
+
 body{
     background-color: #211E1E;
 }
@@ -6,7 +8,9 @@ body{
 h1{
     color: white;
     text-align: center;
-    text-shadow: 2px 2px 2px black;
+    font-size: 50px;
+    font-family: impact, sans-serif;
+    text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
 }
 
 
@@ -48,6 +52,13 @@ h1{
     to{
         opacity: 1;
     }
+}
+
+@font-face {
+    font-family: 'Impact';
+    src: url('../lib/fonts/impact.zip');
+    font-weight: normal;
+    font-style: normal;
 }
 
 
