@@ -19,7 +19,7 @@ img {
     width: 200px;
 }
 
-.weatherButton{
+.featureButton{
     margin-left: 20px;
     display: flex;
     border-radius: 50px;
@@ -41,6 +41,10 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.data{
+    resize: none;
 }
 
 .dataTitle{

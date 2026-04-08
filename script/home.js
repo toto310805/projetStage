@@ -10,7 +10,12 @@ for (let i = 0; i < numberOfStars; i++) {
     document.body.appendChild(star);
 }
 
-const weatherButton = document.querySelector(".weatherButton");
+const weatherButton = document.querySelector("#weatherButton");
 weatherButton.addEventListener("click", (e) => {
     window.location = ("weather.html");
+})
+
+const funButton = document.querySelector("#funButton");
+funButton.addEventListener("click", (e) => {
+    window.location = ("gambling.html");
 })

@@ -6,6 +6,30 @@ const submitButton = document.querySelector(".submit")
 
 const backButton = document.querySelector(".goBack");
 
+const numberOfStars = 100;
+
+for (let i = 0; i < numberOfStars; i++) {
+    const star = document.createElement("div");
+    star.classList.add("star");
+
+    star.style.top = Math.random() * window.innerHeight + "px";
+    star.style.left = Math.random() * window.innerWidth + "px";
+
+    document.body.appendChild(star);
+}
+
+const sun = document.createElement("div")
+sun.classList.add("sun");
+
+for (let i = 0; i < 12; i++) {
+    const ray = document.createElement("div");
+    ray.classList.add("sun-ray");
+    ray.style.transform = `rotate(${i * 30}deg)`;
+    sun.appendChild(ray);
+}
+
+document.body.appendChild(sun);
+
 backButton.addEventListener("click", (e) => {
     window.location = "home.html";
 })
