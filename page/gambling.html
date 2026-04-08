@@ -7,9 +7,17 @@
 </head>
 <body>
     <h1>Il est temps de se détendre ! </h1>
+    <button class="goBack">Retour</button>
+
+    <div class="slotMachine">
+        <div class="reel" id="reel1"></div>
+        <div class="reel" id="reel2"></div>
+        <div class="reel" id="reel3"></div>
+    </div>
 
 
-
+    <img src="/lib/pictures/spin.png" id="spinButton" onmouseenter="getsBiggerWhenAimed()" onmouseleave="getsSmallerWhenAimed()" onclick="spin()">
+    <img src="/lib/pictures/dollars.png" id="dollars">
     <script src="/script/gambling.js"></script>
 </body>
 </html>

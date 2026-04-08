@@ -25,6 +25,7 @@ body{
     box-shadow: 2px 2px 2px black;
     background-color: green;
     color : white;
+    cursor : pointer;
 }
 
 .star{
@@ -83,6 +84,7 @@ body{
     color : white;
     background-color : red;
     box-shadow: 2px 2px 2px black;
+    cursor: pointer;
 }
 
 @keyframes twinkle{
