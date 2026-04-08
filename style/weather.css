@@ -1,0 +1,50 @@
+body{
+    background-color : #211E1E;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.mainTitle{
+    color : white;
+    font-size : 50px;
+    text-align: center;
+    font-family: Impact, sans-serif;
+    text-shadow: 2px 2px 0 black, -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black;
+}
+
+.city{
+    margin-top : 50px;
+    font-size : 50px;
+    border-radius: 20px;
+}
+
+.submit{
+    border-radius : 50px;
+    font-size : 50px;
+    box-shadow: 2px 2px 2px black;
+    background-color: green;
+    color : white;
+}
+
+.weatherResult{
+    display : block;
+    margin : 50px auto 0 auto;
+    text-align: center;
+    block-size: 500px;
+    width : 1000px;
+    height : 60px;
+    font-size : 50px;
+    border-radius : 20px;
+}
+
+.goBack{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size : 50px;
+    border-radius : 50px;
+    color : white;
+    background-color : red;
+    box-shadow: 2px 2px 2px black;
+}
