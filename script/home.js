@@ -19,3 +19,8 @@ const funButton = document.querySelector("#funButton");
 funButton.addEventListener("click", (e) => {
     window.location = ("gambling.html");
 })
+
+const recordsButton = document.querySelector("#recordsButton");
+recordsButton.addEventListener("click", (e) => {
+    window.location = ("records.html");
+})
