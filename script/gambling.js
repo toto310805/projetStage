@@ -38,52 +38,60 @@ const images = [
 
 
 
-let money = 300;
+let money = 200;
 const placeForMoney = document.getElementById('value-money');
 placeForMoney.textContent = money + " €";
 
 
 function spin() {
-    const reels = [
-        document.getElementById("reel1"),
-        document.getElementById("reel2"),
-        document.getElementById("reel3")
-    ];
+    if (money >= 30) {
+        const reels = [
+            document.getElementById("reel1"),
+            document.getElementById("reel2"),
+            document.getElementById("reel3")
+        ];
 
-    const results = [];
-    let completedReels = 0;
-    const messageElement = document.getElementById("message");
-    messageElement.textContent = "";
-    messageElement.className = "";
+        const results = [];
+        let completedReels = 0;
+        const messageElement = document.getElementById("message");
+        messageElement.textContent = "";
+        messageElement.className = "";
 
-    reels.forEach((reel, index) => {
-        reel.classList.add("spin");
+        reels.forEach((reel, index) => {
+            reel.classList.add("spin");
 
-        setTimeout(() => {
-            reel.classList.remove("spin");
+            setTimeout(() => {
+                reel.classList.remove("spin");
 
-            let result;
-            if (index === 1) {
-                const probability = Math.random();
-                if (probability < 0.6) {
-                    result = results[0];
+                let result;
+                if (index === 1) {
+                    const probability = Math.random();
+                    if (probability < 0.6) {
+                        result = results[0];
+                    } else {
+                        result = images[Math.floor(Math.random() * images.length)];
+                    }
                 } else {
                     result = images[Math.floor(Math.random() * images.length)];
                 }
-            } else {
-                result = images[Math.floor(Math.random() * images.length)];
-            }
 
-            reel.innerHTML = `<div style="font-size:50px;text-align:center">${result}</div>`;
-            results[index] = result;
-            completedReels++;
+                reel.innerHTML = `<div style="font-size:50px;text-align:center">${result}</div>`;
+                results[index] = result;
+                completedReels++;
 
-            if (completedReels === reels.length) {
-                checkWin(results);
-            }
+                if (completedReels === reels.length) {
+                    checkWin(results);
+                }
 
-        }, 1000 + index * 500);
-    });
+            }, 1000 + index * 500);
+        });
+    }
+    else{
+        const message = document.getElementById("message");
+        message.textContent = "Pas assez d'argent !"
+        message.className = "not-enough-money";
+    }
+
 }
 
 function checkWin(results) {
@@ -107,6 +115,11 @@ function checkWin(results) {
 }
 
 window.onload = () => {
+
+    setInterval(() => {
+        money += 100
+    }, 600000)
+
     const reels = [
         document.getElementById("reel1"),
         document.getElementById("reel2"),
@@ -116,9 +129,9 @@ window.onload = () => {
     const initialResults = [];
     reels.forEach((reel, index) => {
         let result;
-        if (index === 1) { // Deuxième rouleau
+        if (index === 1) {
             const probability = Math.random();
-            if (probability < 0.6) { // 60% de chance d'avoir le même que le premier
+            if (probability < 0.6) {
                 result = initialResults[0];
             } else {
                 result = images[Math.floor(Math.random() * images.length)];
