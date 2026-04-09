@@ -1,6 +1,5 @@
 const numberOfStars = 100;
 
-let money = 100;
 
 for (let i = 0; i < numberOfStars; i++) {
     const star = document.createElement("div");
@@ -37,16 +36,12 @@ const images = [
     "💎"
 ];
 
-function createReel(reel) {
-    reel.innerHTML = "";
-    for (let i = 0; i < 10; i++) {
-        const div = document.createElement("div");
-        div.textContent = images[Math.floor(Math.random() * images.length)];
-        div.style.fontSize = "50px";
-        div.style.textAlign = "center";
-        reel.appendChild(div);
-    }
-}
+
+
+let money = 100;
+const placeForMoney = document.getElementById('value-money');
+placeForMoney.textContent = money + " €";
+
 
 function spin() {
     const reels = [
@@ -55,18 +50,49 @@ function spin() {
         document.getElementById("reel3")
     ];
 
+    const results = [];
+    let completedReels = 0;
+    const messageElement = document.getElementById("message");
+    messageElement.textContent = "";
+    messageElement.className = "";
+
     reels.forEach((reel, index) => {
         reel.classList.add("spin");
 
         setTimeout(() => {
             reel.classList.remove("spin");
-            createReel(reel);
 
             const result = images[Math.floor(Math.random() * images.length)];
             reel.innerHTML = `<div style="font-size:50px;text-align:center">${result}</div>`;
+            results[index] = result;
+            completedReels++;
+
+            if (completedReels === reels.length) {
+                checkWin(results);
+            }
 
         }, 1000 + index * 500);
     });
+}
+
+function checkWin(results) {
+    money -= 30;
+    const messageElement = document.getElementById("message");
+    if (results[0] === results[1] && results[1] === results[2]) {
+        money += 100;
+        messageElement.textContent = "Jackpot !!!";
+        messageElement.className = "jackpot";
+    }
+    else if (results[0] === results[1] || results[1] === results[2] || results[0] === results[2]) {
+        money += 50;
+        messageElement.textContent = "Ok";
+        messageElement.className = "ok";
+    }
+    else {
+        messageElement.textContent = "Dommage. Essaie encore !";
+        messageElement.className = "dommage";
+    }
+    placeForMoney.textContent = money + " €";
 }
 
 window.onload = () => {
@@ -81,14 +107,5 @@ window.onload = () => {
         reel.innerHTML = `<div style="font-size:50px;text-align:center">${result}</div>`;
     });
 
-    const results = [];
-
-    reels.forEach((reel) => {
-        results.push(reel.textContent);
-    });
-
-    if (results[0] === results[1] && results[1] === results[2]) {
-        alert("Jackpot !!!");
-    }
 };
 

@@ -9,11 +9,15 @@
     <h1>Il est temps de se détendre ! </h1>
     <button class="goBack">Retour</button>
 
+    <p class="money">Money : <span id="value-money"></span></p>
+
     <div class="slotMachine">
         <div class="reel" id="reel1"></div>
         <div class="reel" id="reel2"></div>
         <div class="reel" id="reel3"></div>
     </div>
+
+    <p id="message"></p>
 
 
     <img src="/lib/pictures/spin.png" id="spinButton" onmouseenter="getsBiggerWhenAimed()" onmouseleave="getsSmallerWhenAimed()" onclick="spin()">
