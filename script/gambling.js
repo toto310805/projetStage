@@ -104,16 +104,16 @@ function spin() {
 }
 
 function checkWin(results) {
-    money -= 30;
+    money -= 50;
     const messageElement = document.getElementById("message");
     if (results[0] === results[1] && results[1] === results[2]) {
-        money += 100;
+        money += 500;
         messageElement.textContent = "Jackpot !!!";
         messageElement.className = "jackpot";
     }
     else if (results[0] === results[1] || results[1] === results[2] || results[0] === results[2]) {
-        money += 50;
-        messageElement.textContent = "Ok";
+        money += 100;
+        messageElement.textContent = "Bien !";
         messageElement.className = "ok";
     }
     else {
