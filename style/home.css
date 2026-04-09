@@ -99,3 +99,17 @@ img {
     gap: 20px;
     z-index: 10;
 }
+
+.saveButton{
+    display: block;
+    width: 80%;
+    margin: 50px auto;
+    background-color: green;
+    color: white;
+    border-radius: 50px;
+    font-size: 50px;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px black;
+    border: none;
+    font-family: impact, sans-serif;
+}
