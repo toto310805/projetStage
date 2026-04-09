@@ -42,6 +42,15 @@ let money = 200;
 const placeForMoney = document.getElementById('value-money');
 placeForMoney.textContent = money + " €";
 
+let timeLeft = 600;
+const placeForTime = document.getElementById('value-time');
+
+function updateTimerDisplay() {
+    const minutes = Math.floor(timeLeft / 60);
+    const seconds = timeLeft % 60;
+    placeForTime.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+}
+
 
 function spin() {
     if (money >= 30) {
@@ -116,9 +125,18 @@ function checkWin(results) {
 
 window.onload = () => {
 
+    updateTimerDisplay();
+
     setInterval(() => {
-        money += 100
-    }, 600000)
+        if (timeLeft > 0) {
+            timeLeft--;
+        } else {
+            money += 100;
+            placeForMoney.textContent = money + " €";
+            timeLeft = 600; // Réinitialise à 10 minutes
+        }
+        updateTimerDisplay();
+    }, 1000);
 
     const reels = [
         document.getElementById("reel1"),
