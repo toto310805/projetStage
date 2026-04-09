@@ -38,7 +38,7 @@ const images = [
 
 
 
-let money = 100;
+let money = 300;
 const placeForMoney = document.getElementById('value-money');
 placeForMoney.textContent = money + " €";
 
@@ -62,7 +62,18 @@ function spin() {
         setTimeout(() => {
             reel.classList.remove("spin");
 
-            const result = images[Math.floor(Math.random() * images.length)];
+            let result;
+            if (index === 1) {
+                const probability = Math.random();
+                if (probability < 0.6) {
+                    result = results[0];
+                } else {
+                    result = images[Math.floor(Math.random() * images.length)];
+                }
+            } else {
+                result = images[Math.floor(Math.random() * images.length)];
+            }
+
             reel.innerHTML = `<div style="font-size:50px;text-align:center">${result}</div>`;
             results[index] = result;
             completedReels++;
@@ -102,8 +113,20 @@ window.onload = () => {
         document.getElementById("reel3")
     ];
 
-    reels.forEach(reel => {
-        const result = images[Math.floor(Math.random() * images.length)];
+    const initialResults = [];
+    reels.forEach((reel, index) => {
+        let result;
+        if (index === 1) { // Deuxième rouleau
+            const probability = Math.random();
+            if (probability < 0.6) { // 60% de chance d'avoir le même que le premier
+                result = initialResults[0];
+            } else {
+                result = images[Math.floor(Math.random() * images.length)];
+            }
+        } else {
+            result = images[Math.floor(Math.random() * images.length)];
+        }
+        initialResults[index] = result;
         reel.innerHTML = `<div style="font-size:50px;text-align:center">${result}</div>`;
     });
 
