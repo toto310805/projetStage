@@ -36,3 +36,50 @@ function time() {
 time();
 
 setInterval(time, 1000);
+
+
+const startButton = document.querySelector("#time-start");
+const display = document.querySelector("#display");
+
+let intervalId = null
+let seconds = 0;
+let minutes = 0;
+let heures = 0;
+startButton.addEventListener("click", () => {
+    if(intervalId === null) {
+        intervalId = setInterval(() => {
+            seconds ++;
+            display.textContent = `${seconds} s`;
+            if (seconds === 60) {
+                minutes ++;
+                seconds = 0
+            }
+            if (minutes === 60) {
+                heures ++;
+                minutes = 0;
+            }
+
+            if (heures >= 1) {
+                display.textContent = `${heures} h ${minutes} min ${seconds} s`;
+            } else if (minutes >= 1) {
+                display.textContent = `${minutes} min ${seconds} s`;
+            }
+
+        }, 1000);
+        startButton.textContent = "Arrêter";
+    } else{
+        clearInterval(intervalId);
+        intervalId = null
+        startButton.textContent = "Démarrer"
+    }
+});
+
+const resetButton = document.getElementById('time-reset');
+
+resetButton.addEventListener('click', () => {
+    clearInterval(intervalId);
+    intervalId = null;
+    seconds = 0;
+    display.textContent = `${seconds} s`;
+    startButton.textContent = 'Démarrer';
+});

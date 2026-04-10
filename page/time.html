@@ -11,12 +11,22 @@
 
         <div id="time"></div>
         <div id="featuresOfTime">
-            <p id="timer">Timer : </p>
+            <div id="timerContainer">
+                <p id="timer">Minuteur </p>
+                <div class="buttons">
+                    <button class="start" id="timer-start">Démarrer</button>
+                    <textarea id="timer-result" readonly></textarea>
+                </div>
+            </div>
+            <div id="timeContainer">
+                <p id="chronometre">Chronomètre </p>
+                <div class="buttons">
+                    <button class="start" id="time-start">Démarrer</button>
+                    <textarea readonly id="display"></textarea>
+                    <button class="start" id="time-reset">Réinitialiser</button>
+                </div>
+            </div>
         </div>
-        <div id="buttons">
-            <button id="start">Start/Stop</button>
-        </div>
-
         <script src="/script/time.js"></script>
     </body>
 </html>

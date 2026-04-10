@@ -10,14 +10,52 @@ h1{
     font-size: 50px;
     text-shadow: 2px 2px 0 black, -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black;
 }
+
 #time {
     font-size: 50px;
     font-weight: bold;
     text-shadow: 2px 2px 0 black, -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black;
 }
+
+#time-start, #display{
+    width: 300px;
+}
+
+#timer-start, #timer-result{
+    width: 300px;
+}
+
+#time-start, #timer-start{
+    background-color: green;
+    box-shadow: 2px 2px 2px black;
+}
+
+#timerContainer{
+    position: absolute;
+    left: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 #timer{
     font-size: 50px;
-    margin-top: 100px;
+    margin: 0;
+}
+#chronometre{
+    font-size: 50px;
+    margin: 0;
+}
+#timeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#time-reset{
+    margin-top: 10px;
+    width: 300px;
+    background-color: red;
+    box-shadow: 2px 2px 2px black;
 }
 
 #backButton{
@@ -37,13 +75,39 @@ h1{
 #featuresOfTime{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
 }
 
-#buttons, #start {
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.start {
     display: flex;
     flex-direction: row;
-    width: 100px;
-    height: 20px;
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons textarea {
+    width: 200px;
+    height: 100px;
+    margin-top: 10px;
+    resize: none;
+    font-size: 50px;
+    text-align: center;
+    font-family: Impact, sans-serif;
 }
 
 .star{
