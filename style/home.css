@@ -70,26 +70,6 @@ img {
 }
 
 
-
-@keyframes twinkle{
-    from{
-        opacity: 0.2;
-    }
-    to{
-        opacity: 1;
-    }
-}
-
-@font-face {
-    font-family: 'Impact';
-    src: url('../lib/fonts/impact.zip');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
-
-
 .buttonsContainer{
     position: absolute;
     top: 20px;
@@ -113,4 +93,30 @@ img {
     border: none;
     font-family: impact, sans-serif;
     transition: transform 0.3s ease;
+    transform: scale(1);
 }
+
+.saveButton:hover{
+    transform: scale(1.1);
+}
+
+
+
+
+@keyframes twinkle{
+    from{
+        opacity: 0.2;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@font-face {
+    font-family: 'Impact';
+    src: url('../lib/fonts/impact.zip');
+    font-weight: normal;
+    font-style: normal;
+}
+
+

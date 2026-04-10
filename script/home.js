@@ -30,14 +30,4 @@ timeButton.addEventListener("click", (e) => {
     window.location = ("time.html");
 })
 
-const saveButton = document.querySelector("#saveButton");
 
-function getsBiggerWhenAimed(){
-    const btn = document.getElementById("saveButton");
-    if (btn) btn.style.transform = "scale(1.05)";
-}
-
-function getsSmallerWhenAimed(){
-    const btn = document.getElementById("saveButton");
-    if (btn) btn.style.transform = "scale(1)";
-}
