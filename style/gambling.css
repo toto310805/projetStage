@@ -70,13 +70,15 @@ h1{
 .goBack{
     position: absolute;
     top: 20px;
-    left: 20px;
+    left: 50px;
     font-size : 50px;
     border-radius : 50px;
     color : white;
     background-color : red;
     box-shadow: 2px 2px 2px black;
     cursor: pointer;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .reel{

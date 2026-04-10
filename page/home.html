@@ -11,6 +11,7 @@
         <button class="featureButton" id="weatherButton">Météo</button>
         <button class="featureButton" id="funButton">Casino</button>
         <button class="featureButton" id="recordsButton">Données</button>
+        <button class="featureButton" id="timeButton">Horloge</button>
     </div>
 
     <img src="/lib/pictures/rocket.png" alt="Une fusée">
@@ -42,7 +43,7 @@
         </div>
     </div>
 
-    <button class="saveButton" id="saveButton">Enregistrer</button>
+    <button class="saveButton" id="saveButton" onmouseenter="getsBiggerWhenAimed()" onmouseleave="getsSmallerWhenAimed()">Enregistrer</button>
 
 
     <script src="/script/home.js"></script>

@@ -112,4 +112,5 @@ img {
     box-shadow: 2px 2px 2px black;
     border: none;
     font-family: impact, sans-serif;
+    transition: transform 0.3s ease;
 }
