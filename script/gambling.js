@@ -52,8 +52,19 @@ function updateTimerDisplay() {
 }
 
 
+function getSymbol(index, firstResult) {
+    if (index === 1 && firstResult) {
+        return Math.random() < 0.6 ? firstResult : images[Math.floor(Math.random() * images.length)];
+    }
+    return images[Math.floor(Math.random() * images.length)];
+}
+
+function updateReelContent(reel, content) {
+    reel.innerHTML = `<div class="reel-content"><div class="symbol">${content}</div></div>`;
+}
+
 function spin() {
-    if (money >= 30) {
+    if (money >= 50) {
         const reels = [
             document.getElementById("reel1"),
             document.getElementById("reel2"),
@@ -66,33 +77,44 @@ function spin() {
         messageElement.textContent = "";
         messageElement.className = "";
 
+        const numExtraSymbols = 15;
+
         reels.forEach((reel, index) => {
-            reel.classList.add("spin");
+            const reelContent = document.createElement('div');
+            reelContent.className = 'reel-content';
+
+            const currentSymbolElement = reel.querySelector('.symbol:last-child');
+            const currentSymbol = currentSymbolElement ? currentSymbolElement.textContent : reel.textContent.trim();
+            reelContent.innerHTML = `<div class="symbol">${currentSymbol}</div>`;
+
+            for (let i = 0; i < numExtraSymbols; i++) {
+                reelContent.innerHTML += `<div class="symbol">${getSymbol()}</div>`;
+            }
+
+            const result = getSymbol(index, results[0]);
+            results[index] = result;
+            reelContent.innerHTML += `<div class="symbol">${result}</div>`;
+
+            reel.innerHTML = '';
+            reel.appendChild(reelContent);
 
             setTimeout(() => {
-                reel.classList.remove("spin");
+                reelContent.classList.add("spin-animation", "blur");
+                const symbolHeight = 120;
+                const totalMove = (numExtraSymbols + 1) * symbolHeight;
+                reelContent.style.transform = `translateY(-${totalMove}px)`;
+            }, index * 200);
 
-                let result;
-                if (index === 1) {
-                    const probability = Math.random();
-                    if (probability < 0.6) {
-                        result = results[0];
-                    } else {
-                        result = images[Math.floor(Math.random() * images.length)];
-                    }
-                } else {
-                    result = images[Math.floor(Math.random() * images.length)];
-                }
+            setTimeout(() => {
+                reelContent.classList.remove("blur", "spin-animation");
+                reelContent.style.transform = "none";
+                updateReelContent(reel, result);
 
-                reel.innerHTML = `<div style="font-size:50px;text-align:center">${result}</div>`;
-                results[index] = result;
                 completedReels++;
-
                 if (completedReels === reels.length) {
                     checkWin(results);
                 }
-
-            }, 1000 + index * 500);
+            }, 2000 + index * 200);
         });
     }
     else{
@@ -146,19 +168,9 @@ window.onload = () => {
 
     const initialResults = [];
     reels.forEach((reel, index) => {
-        let result;
-        if (index === 1) {
-            const probability = Math.random();
-            if (probability < 0.6) {
-                result = initialResults[0];
-            } else {
-                result = images[Math.floor(Math.random() * images.length)];
-            }
-        } else {
-            result = images[Math.floor(Math.random() * images.length)];
-        }
+        const result = getSymbol(index, initialResults[0]);
         initialResults[index] = result;
-        reel.innerHTML = `<div style="font-size:50px;text-align:center">${result}</div>`;
+        updateReelContent(reel, result);
     });
 
 };
