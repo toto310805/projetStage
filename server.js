@@ -1,6 +1,9 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -14,8 +17,11 @@ app.use('/page', express.static(path.join(__dirname, 'page')));
 
 app.use(express.static(path.join(__dirname)));
 
-app.get('/api/key', (req, res) => {
-    res.json({ apiKey: process.env.API_KEY });
+
+app.get('/api/config', (req, res) => {
+    res.json({
+        api_key: process.env.API_KEY
+    });
 });
 
 app.get('/', (req, res) => {

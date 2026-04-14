@@ -1,9 +1,15 @@
 import { setBackground } from "./background.js";
 
-const res = await fetch('/api/key');
-const data = await res.json();
-const api_key = data.apiKey
 const ville = document.querySelector(".city")
+
+let api_key = ""
+
+fetch('/api/config')
+    .then(response => response.json())
+    .then(data => {
+        api_key = data.api_key;
+    })
+    .catch(err => console.error("Impossible de charger la config:", err));
 
 
 const submitButton = document.querySelector(".submit")
