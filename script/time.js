@@ -1,21 +1,11 @@
+import { setBackground } from "./background.js";
+
 const backButton = document.querySelector("#backButton");
 backButton.addEventListener("click", () => {
     window.location.href = "home.html";
 })
 
 
-const numberOfStars = 100;
-
-
-for (let i = 0; i < numberOfStars; i++) {
-    const star = document.createElement("div");
-    star.classList.add("star");
-
-    star.style.top = Math.random() * window.innerHeight + "px";
-    star.style.left = Math.random() * window.innerWidth + "px";
-
-    document.body.appendChild(star);
-}
 
 function time() {
     const now = new Date();
@@ -137,3 +127,7 @@ resetTimerButton.addEventListener("click", () => {
     startTimerButton.textContent = "Démarrer";
     timerInput.value = "";
 });
+
+window.onload = () => {
+    setBackground();
+};

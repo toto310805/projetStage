@@ -1,3 +1,5 @@
+@import "common.css";
+
 body{
     background-color: #211E1E;
 }
@@ -10,12 +12,3 @@ h1{
     text-shadow: 2px 2px 0 black, -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black;
 }
 
-.star{
-    position: fixed;
-    width: 3px;
-    height: 3px;
-    background: white;
-    border-radius: 50%;
-    box-shadow: 0 0 6px white;
-    animation: twinkle 2s infinite alternate;
-}

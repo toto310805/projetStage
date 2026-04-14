@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Page détente</title>
-    <link rel="stylesheet" href="/style/gambling.css">
+    <link rel="stylesheet" href="../style/gambling.css">
+    <link rel="stylesheet" href="../style/common.css">
 </head>
 <body>
     <h1>Il est temps de se détendre ! </h1>
@@ -20,11 +21,16 @@
 
     <p id="message"></p>
 
-    <img src="/lib/gifs/casino.gif" id="casino-gif" alt="Un gif de devanture de casino style neons">
+    <img src="../lib/gifs/casino.gif" id="casino-gif" alt="Un gif de devanture de casino style neons">
 
 
-    <img src="/lib/pictures/spin.png" id="spinButton" onmouseenter="getsBiggerWhenAimed()" onmouseleave="getsSmallerWhenAimed()" onclick="spin()">
-    <img src="/lib/pictures/dollars.png" id="dollars">
-    <script src="/script/gambling.js"></script>
+    <img src="../lib/pictures/spin.png" id="spinButton" onmouseenter="getsBiggerWhenAimed()" onmouseleave="getsSmallerWhenAimed()" onclick="spin()">
+    <img src="../lib/pictures/dollars.png" id="dollars">
+    <script type="module">
+        import { getsBiggerWhenAimed, getsSmallerWhenAimed, spin } from "../script/gambling.js";
+        window.getsBiggerWhenAimed = getsBiggerWhenAimed;
+        window.getsSmallerWhenAimed = getsSmallerWhenAimed;
+        window.spin = spin;
+    </script>
 </body>
 </html>

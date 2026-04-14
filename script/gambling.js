@@ -1,28 +1,18 @@
-const numberOfStars = 100;
 
 
-for (let i = 0; i < numberOfStars; i++) {
-    const star = document.createElement("div");
-    star.classList.add("star");
-
-    star.style.top = Math.random() * window.innerHeight + "px";
-    star.style.left = Math.random() * window.innerWidth + "px";
-
-    document.body.appendChild(star);
-}
-
+import { setBackground } from "./background.js";
 
 const backButton = document.querySelector(".goBack");
 backButton.addEventListener("click", () => {
     window.location = ("home.html");
 })
 
-function getsBiggerWhenAimed(){
+export function getsBiggerWhenAimed(){
     const spinButton = document.getElementById("spinButton");
     spinButton.style.transform = "scale(1.1)";
 }
 
-function getsSmallerWhenAimed(){
+export function getsSmallerWhenAimed(){
     const spinButton = document.getElementById("spinButton");
     spinButton.style.transform = "scale(1)";
 }
@@ -63,7 +53,7 @@ function updateReelContent(reel, content) {
     reel.innerHTML = `<div class="reel-content"><div class="symbol">${content}</div></div>`;
 }
 
-function spin() {
+export function spin() {
     if (money >= 50) {
         const reels = [
             document.getElementById("reel1"),
@@ -146,6 +136,8 @@ function checkWin(results) {
 }
 
 window.onload = () => {
+
+    setBackground();
 
     updateTimerDisplay();
 

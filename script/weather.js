@@ -1,3 +1,4 @@
+import { setBackground } from "./background.js";
 const api_key = "f6fa10de24cc087ccc90990d0f016681"
 const ville = document.querySelector(".city")
 
@@ -6,17 +7,6 @@ const submitButton = document.querySelector(".submit")
 
 const backButton = document.querySelector(".goBack");
 
-const numberOfStars = 100;
-
-for (let i = 0; i < numberOfStars; i++) {
-    const star = document.createElement("div");
-    star.classList.add("star");
-
-    star.style.top = Math.random() * window.innerHeight + "px";
-    star.style.left = Math.random() * window.innerWidth + "px";
-
-    document.body.appendChild(star);
-}
 
 const sun = document.createElement("div")
 sun.classList.add("sun");
@@ -61,3 +51,7 @@ submitButton.addEventListener("click", () => {
 })
 
 
+
+window.onload = () => {
+    setBackground();
+};
