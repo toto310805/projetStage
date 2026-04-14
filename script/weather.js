@@ -1,5 +1,8 @@
 import { setBackground } from "./background.js";
-const api_key = "f6fa10de24cc087ccc90990d0f016681"
+
+const res = await fetch('/api/key');
+const data = await res.json();
+const api_key = data.apiKey
 const ville = document.querySelector(".city")
 
 

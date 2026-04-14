@@ -14,6 +14,10 @@ app.use('/page', express.static(path.join(__dirname, 'page')));
 
 app.use(express.static(path.join(__dirname)));
 
+app.get('/api/key', (req, res) => {
+    res.json({ apiKey: process.env.API_KEY });
+});
+
 app.get('/', (req, res) => {
     res.redirect('/home.html');
 });
