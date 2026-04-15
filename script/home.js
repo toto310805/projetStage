@@ -1,21 +1,21 @@
 import { setBackground } from "./background.js";
 
-const weatherButton = document.querySelector("#weatherButton");
+const weatherButton = document.querySelector("#weather-button");
 weatherButton.addEventListener("click", (e) => {
     window.location = ("weather.html");
 })
 
-const funButton = document.querySelector("#funButton");
+const funButton = document.querySelector("#fun-button");
 funButton.addEventListener("click", (e) => {
     window.location = ("gambling.html");
 })
 
-const recordsButton = document.querySelector("#recordsButton");
+const recordsButton = document.querySelector("#records-button");
 recordsButton.addEventListener("click", (e) => {
     window.location = ("records.html");
 })
 
-const timeButton = document.querySelector("#timeButton");
+const timeButton = document.querySelector("#time-button");
 timeButton.addEventListener("click", (e) => {
     window.location = ("time.html");
 })

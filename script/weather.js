@@ -14,7 +14,7 @@ fetch('/api/config')
 
 const submitButton = document.querySelector(".submit")
 
-const backButton = document.querySelector(".goBack");
+const backButton = document.querySelector(".go-back");
 
 
 const sun = document.createElement("div")
@@ -45,7 +45,7 @@ submitButton.addEventListener("click", () => {
                 const temperature = data.main.temp;
                 const description = data.weather[0].description;
 
-                const textArea = document.querySelector(".weatherResult");
+                const textArea = document.querySelector(".weather-result");
                 textArea.value = `Il fait ${temperature} °C avec ${description}`;
 
             } else {

@@ -20,7 +20,7 @@ img {
     width: 200px;
 }
 
-.featureButton{
+.feature-button{
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -32,13 +32,13 @@ img {
 }
 
 
-.resultsContainer {
+.results-container {
     display: flex;
     justify-content: center;
     gap: 20px;
 }
 
-.resultItem {
+.result-item {
     margin-top: 100px;
     display: flex;
     flex-direction: column;
@@ -53,7 +53,7 @@ img {
     border-radius: 10px;
 }
 
-.dataTitle{
+.data-title{
     color: white;
     text-align: center;
     text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
@@ -62,7 +62,7 @@ img {
 
 
 
-.buttonsContainer{
+.buttons-container{
     position: absolute;
     top: 20px;
     left: 20px;
@@ -72,7 +72,7 @@ img {
     z-index: 10;
 }
 
-.saveButton{
+.save-button{
     display: block;
     width: 80%;
     margin: 50px auto;
@@ -88,7 +88,7 @@ img {
     transform: scale(1);
 }
 
-.saveButton:hover{
+.save-button:hover{
     transform: scale(1.1);
 }
 

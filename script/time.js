@@ -1,6 +1,6 @@
 import { setBackground } from "./background.js";
 
-const backButton = document.querySelector("#backButton");
+const backButton = document.querySelector("#back-button");
 backButton.addEventListener("click", () => {
     window.location.href = "home.html";
 })

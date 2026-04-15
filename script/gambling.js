@@ -2,18 +2,18 @@
 
 import { setBackground } from "./background.js";
 
-const backButton = document.querySelector(".goBack");
+const backButton = document.querySelector(".go-back");
 backButton.addEventListener("click", () => {
     window.location = ("home.html");
 })
 
 export function getsBiggerWhenAimed(){
-    const spinButton = document.getElementById("spinButton");
+    const spinButton = document.getElementById("spin-button");
     spinButton.style.transform = "scale(1.1)";
 }
 
 export function getsSmallerWhenAimed(){
-    const spinButton = document.getElementById("spinButton");
+    const spinButton = document.getElementById("spin-button");
     spinButton.style.transform = "scale(1)";
 }
 

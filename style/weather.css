@@ -7,7 +7,7 @@ body{
     text-align: center;
 }
 
-.mainTitle{
+.main-title{
     color : white;
     font-size : 50px;
     text-align: center;
@@ -57,7 +57,7 @@ body{
 
 
 
-.weatherResult{
+.weather-result{
     display : block;
     margin : 130px auto 0 auto;
     text-align: center;
@@ -68,7 +68,7 @@ body{
     border-radius : 20px;
 }
 
-.goBack{
+.go-back{
     position: absolute;
     top: 20px;
     left: 20px;
