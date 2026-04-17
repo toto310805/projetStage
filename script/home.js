@@ -5,11 +5,6 @@ weatherButton.addEventListener("click", (e) => {
     window.location = ("weather.html");
 })
 
-const funButton = document.querySelector("#fun-button");
-funButton.addEventListener("click", (e) => {
-    window.location = ("gambling.html");
-})
-
 const recordsButton = document.querySelector("#records-button");
 recordsButton.addEventListener("click", (e) => {
     window.location = ("records.html");
