@@ -1,6 +1,8 @@
 
-
+import {User} from "../Classes/User.js";
 import { setBackground } from "./background.js";
+import {saveUser, loadUser} from "./saveSystem.js";
+let user = loadUser();
 
 const backButton = document.querySelector(".go-back");
 backButton.addEventListener("click", () => {
@@ -28,7 +30,7 @@ const images = [
 
 
 
-let money = 200;
+let money = user.getMoney();
 const placeForMoney = document.getElementById('value-money');
 placeForMoney.textContent = money + " €";
 
@@ -132,10 +134,14 @@ function checkWin(results) {
         messageElement.textContent = "Dommage. Essaie encore !";
         messageElement.className = "dommage";
     }
+    user.setMoney(money);
+    saveUser(user);
     placeForMoney.textContent = money + " €";
 }
 
 window.onload = () => {
+
+    saveUser(user)
 
     setBackground();
 
@@ -146,6 +152,8 @@ window.onload = () => {
             timeLeft--;
         } else {
             money += 100;
+            user.setMoney(money);
+            saveUser(user);
             placeForMoney.textContent = money + " €";
             timeLeft = 600; // Réinitialise à 10 minutes
         }
